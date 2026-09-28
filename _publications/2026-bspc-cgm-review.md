@@ -1,7 +1,7 @@
 ---
 title: "AI based detection and prediction of eating events using Continuous Glucose Monitoring: A comprehensive review"
 collection: publications
-category: journals
+category: manuscripts
 permalink: /publication/2026-bspc-cgm-review
 date: 2026-11-01
 venue: "Biomedical Signal Processing and Control"
