@@ -1,0 +1,37 @@
+name: Generate Publications
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-publications:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate publication pages
+        run: python markdown_generator/publications.py
+
+      - name: Commit generated publication files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add _publications/
+
+          if git diff --cached --quiet; then
+            echo "No new publication files to commit."
+          else
+            git commit -m "Generate publication pages from TSV"
+            git push
+          fi
