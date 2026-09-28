@@ -70,3 +70,19 @@ Research areas include:
 - Personalized diabetes monitoring
 
 This work contributed to my research on deep-learning approaches for glucose prediction and physiological forecasting.
+
+---
+
+## Medical Image Analysis for Healthcare
+
+Earlier research focused on the application of machine learning and deep learning to medical image analysis and computer-aided healthcare applications.
+
+The work included:
+
+- Lung cancer detection from medical imaging data
+- Breast cancer diagnosis
+- COVID-19-related imaging and healthcare analytics
+- Biomedical image classification
+- Deep-learning-based diagnostic support
+
+This research formed part of my broader experience in artificial intelligence for healthcare before my current focus on physiological time-series, wearable sensing, and speech-based assessment.
