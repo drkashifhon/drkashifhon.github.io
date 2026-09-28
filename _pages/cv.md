@@ -1,64 +1,73 @@
 ---
-layout: archive
-title: "CV"
+title: "Curriculum Vitae"
 permalink: /cv/
 author_profile: true
-redirect_from:
-  - /resume
 ---
 
-{% include base_path %}
+[Download CV (PDF)](/files/Muhammad_Kashif_CV.pdf){: .btn .btn--primary}
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+## Research Profile
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+PhD Researcher in Information and Communications Technology at the University of Calabria, Italy, working on artificial intelligence for healthcare, physiological time-series analysis, wearable sensing, continuous glucose monitoring, and speech-based neurological assessment.
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+## Research Experience
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+### PhD Researcher
+**University of Calabria, Italy**  
+2023–2026
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+Research on physiological time-series analysis, continuous glucose monitoring, meal-event detection, glucose prediction, and speech-based neurological assessment.
+
+### International Scholar
+**KU Leuven, e-Media Research Lab, Belgium**  
+October 2024 – April 2025
+
+Research on wearable sensing and wrist-IMU-based eating-event detection using free-living datasets.
+
+### Research Assistant
+**AI & Data Analytics Lab, Prince Sultan University, Saudi Arabia**  
+2020–2023
+
+Research on machine learning and deep learning for healthcare and data analytics.
+
+## Education
+
+### PhD in Information and Communications Technology
+**University of Calabria, Italy**  
+2023–2026
+
+### MS in Computer Science
+**International Islamic University Islamabad, Pakistan**  
+2016–2019
+
+### BS in Computer Science
+**University of Peshawar, Pakistan**  
+2009–2013
+
+## Research Interests
+
+- Artificial Intelligence for Healthcare
+- Physiological Time-Series Analysis
+- Continuous Glucose Monitoring
+- Diabetes Technology
+- Wearable Sensing
+- Biomedical Signal Processing
+- Speech-Based Neurological Assessment
+- Multimodal Machine Learning
+- Deep Learning and Temporal Modeling
+
+## Technical Skills
+
+**Programming:** Python, MATLAB  
+**Machine Learning:** LSTM, BiLSTM, GRU, CNN, Conv1D  
+**Speech AI:** WavLM, Whisper, LoRA / PEFT  
+**Signal Analysis:** Physiological and wearable time-series processing  
+**Evaluation:** Subject-independent validation, event-level evaluation, multimodal analysis
+
+## Publications
+
+See the complete list on my [Publications](/publications/) page.
+
+## Presentations
+
+Selected conference and poster presentations are available on my [Presentations](/talks/) page.
