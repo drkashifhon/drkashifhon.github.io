@@ -7,15 +7,6 @@ redirect_from:
   - /about.html
 ---
 
----
-permalink: /
-title: "About Me"
-author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
----
-
 I am a **PhD Researcher in Information and Communications Technology** at the **University of Calabria, Italy**, working at the intersection of **artificial intelligence, physiological time-series analysis, wearable sensing, and digital health**.
 
 My research focuses on developing machine-learning methods for extracting clinically meaningful information from physiological and behavioral data. In particular, I work on **continuous glucose monitoring (CGM)**, **meal and eating-event detection**, **glucose forecasting**, **wearable sensor analytics**, and **speech-based neurological assessment**.
