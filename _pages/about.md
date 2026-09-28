@@ -11,6 +11,8 @@ I am a **PhD Researcher in Information and Communications Technology** at the **
 
 My research focuses on developing machine-learning methods for extracting clinically meaningful information from physiological and behavioral data. In particular, I work on **continuous glucose monitoring (CGM)**, **meal and eating-event detection**, **glucose forecasting**, **wearable sensor analytics**, and **speech-based neurological assessment**.
 
+My earlier research experience also includes AI-based medical image analysis for applications such as lung cancer detection, breast cancer diagnosis, and COVID-19-related healthcare analytics.
+
 My broader research goal is to develop robust and clinically relevant AI methods that can support **personalized health monitoring, disease assessment, and data-driven decision support**.
 
 ## Research Interests
@@ -22,6 +24,7 @@ My broader research goal is to develop robust and clinically relevant AI methods
 - Wearable and Multimodal Sensing
 - Biomedical Signal Processing
 - Speech-Based Neurological Assessment
+- Medical Image Analysis
 - Deep Learning and Temporal Modeling
 
 ## Current Research
