@@ -45,6 +45,20 @@ My work investigates:
 - Acoustic and linguistic information fusion
 - Subject-level neurological classification
 
+## Medical Image Analysis
+
+My earlier research experience also includes the application of machine learning and deep learning to medical image analysis and healthcare imaging problems.
+
+This work involved applications including:
+
+- Lung cancer detection and analysis from medical imaging data
+- Breast cancer diagnosis using machine-learning and deep-learning methods
+- COVID-19-related medical imaging and healthcare analytics
+- Feature extraction and classification from biomedical images
+- Deep-learning methods for computer-aided diagnosis
+
+This experience provided a broader foundation in AI for healthcare and complements my current research on physiological signals, wearable sensing, and speech-based health assessment.
+
 ## Multimodal AI for Healthcare
 
 I am broadly interested in integrating heterogeneous sources of physiological and behavioral information to develop robust AI systems for personalized health monitoring.
