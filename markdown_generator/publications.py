@@ -1,119 +1,503 @@
-# Publications markdown generator for AcademicPages
-# 
-# Takes a TSV / CSV of publications with metadata and converts them for use with [academicpages.github.io](academicpages.github.io). 
-# Can be called via the command prompt by using `python3 publications.py [filename]`.
+#!/usr/bin/env python3
 
-# Data format
-# 
-# The file needs to have the following columns as a header at the top:
-# pub_date, title, venue, excerpt, citation, url_slug, paper_url, slides_url
-# - `excerpt`, `paper_url`, and slides_url can be blank, but the others must have values. 
-# - `pub_date` must be formatted as YYYY-MM-DD.
-# - `url_slug` will be the descriptive part of the .md file and the permalink URL for the page about the paper. 
-#    The .md file will be `YYYY-MM-DD-[url_slug].md` and the permalink will be `https://[yourdomain]/publications/YYYY-MM-DD-[url_slug]`
+"""
+Generate Academic Pages publication Markdown files from publications.tsv.
+
+Expected TSV columns:
+    pub_date
+    title
+    venue
+    excerpt
+    citation
+    url_slug
+    paper_url
+    category
+
+Supported categories:
+    manuscripts   -> Journal Articles
+    conferences   -> Conference Papers
+    books         -> Books / Book Chapters
+
+The script:
+1. Reads publications.tsv
+2. Scans existing files in _publications/
+3. Skips publications whose titles already exist
+4. Generates only missing publication Markdown files
+5. Uses filenames such as:
+       2025-aime-ms-speech.md
+       2021-caida-lung-cancer.md
+"""
+
 import csv
-import os
+import re
 import sys
+import unicodedata
+from pathlib import Path
 
-# Flag to indicate an error occurred
-EXIT_ERROR = 0
 
-# The expected layout of the CSV / TSV file
-HEADER_LEGACY  = ['pub_date', 'title', 'venue', 'excerpt', 'citation', 'url_slug', 'paper_url', 'slides_url']
-HEADER_UPDATED = ['pub_date', 'title', 'venue', 'excerpt', 'citation', 'url_slug', 'paper_url', 'slides_url', 'category']
+# ---------------------------------------------------------
+# Paths
+# ---------------------------------------------------------
 
-# YAML is very picky about how it takes a valid string, so we are replacing single and double quotes (and ampersands)
-# with their HTML encoded equivalents. This makes them look not so readable in raw format, but they are parsed and
-# rendered nicely.
-HTML_ESCAPE_TABLE = {
-    "&": "&amp;",
-    '"': "&quot;",
-    "'": "&apos;"
-    }
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent
 
-# This is where the heavy lifting is done. This loops through all the rows in the TSV dataframe, then starts to
-# concatenate a big string (```md```) that contains the markdown for each type. It does the YAML metadata first, then
-# does the description for the individual page.
-def create_md(lines: list, layout: list):
-    for item in lines:
-        # Parse the filename information
-        md_filename = f"{item[layout.index('pub_date')]}-{item[layout.index('url_slug')]}.md"
-        html_filename = str(item[layout.index('pub_date')]) + "-" + item[layout.index('url_slug')]
-        
-        # Parse the YAML variables
-        md = f"---\ntitle: \"{item[layout.index('title')]}\"\n"
-        md += "collection: publications"
-        if len(layout) == len(HEADER_UPDATED):
-            md += f"\ncategory: {item[layout.index('category')]}"
-        else:
-            md += "\ncategory: manuscripts"
-        md += f"\npermalink: /publication/{html_filename}"
-        if len(str(item[layout.index('excerpt')])) > 5:
-            md += f"\nexcerpt: '{html_escape(item[layout.index('excerpt')])}'"
-        md += f"\ndate: {item[layout.index('pub_date')]}"
-        md += f"\nvenue: '{html_escape(item[layout.index('venue')])}'"
-        if len(str(item[layout.index('paper_url')])) > 5:
-            md += f"\npaperurl: '{item[layout.index('paper_url')]}'"
-        md += f"\ncitation: '{html_escape(item[layout.index('citation')])}'"
-        md += "\n---"
-        
-        # Markdown description for individual page
-        if len(str(item[layout.index('paper_url')])) > 5:
-            md += f"\n<a href='{item[layout.index('paper_url')]}'>Download paper here</a>\n"
-        if len(str(item[layout.index('excerpt')])) > 5:
-            md += f"\n{html_escape(item[layout.index('excerpt')])}\n"
-        md += f"\nRecommended citation: {item[layout.index('citation')]}"
-        
-        # Write the file
-        md_filename = os.path.join("../_publications/", os.path.basename(md_filename))
-        with open(md_filename, 'w') as f:
-            f.write(md)
+TSV_FILE = SCRIPT_DIR / "publications.tsv"
+PUBLICATIONS_DIR = REPO_ROOT / "_publications"
 
-def html_escape(text):
-    """Produce entities within text."""
-    return "".join(HTML_ESCAPE_TABLE.get(c,c) for c in text)
 
-def read(filename: str) -> tuple[list, list]:
-    '''Read the contents of the file, check the header and return the parsed line along with the file type.'''
+# ---------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------
 
-    # Read the contents of the file
-    lines = []
-    with open(filename, 'r') as file:
-        delimiter = ',' if filename.endswith('.csv') else '\t'
-        reader = csv.reader(file, delimiter=delimiter)
-        for row in reader:
-            lines.append(row)
+VALID_CATEGORIES = {
+    "manuscripts",
+    "conferences",
+    "books",
+}
 
-    # Verify the file format makes sense
-    if len(lines) <= 1:
-        print(f'Not enough lines in the file to process, found {len(lines)}', file=sys.stderr)
-        sys.exit(EXIT_ERROR)
 
-    # Verify the header, remove it once checked
-    layout = HEADER_UPDATED
-    if HEADER_LEGACY == lines[0]:
-        layout = HEADER_LEGACY
-    elif HEADER_UPDATED != lines[0]:
-        print(lines[0])
-        print('The header of the file does not match the expected format', file=sys.stderr)
-        sys.exit(EXIT_ERROR)
-    lines = lines[1:]
-    
-    # Return the lines and format
-    return lines, layout
+# These are optional aliases for publications you already
+# created manually. They are not strictly necessary because
+# the script also checks titles, but keeping them here gives
+# another layer of protection against duplicates.
+EXISTING_FILENAME_ALIASES = {
+    "glstm": "2024-glstm.md",
+    "acm-bcb-parkinson": "2026-acm-bcb-parkinson.md",
+    "bspc-cgm-review": "2026-bspc-cgm-review.md",
+    "eusipco-meal-detection": "2026-eusipco-meal-detection.md",
+}
 
-if __name__ == '__main__':
-    # Make sure a filename was given
-    if len(sys.argv) != 2:
-        print('Usage: python3 publications.py [filename]', file=sys.stderr)
-        sys.exit(EXIT_ERROR)
 
-    # Make sure the filename is TSV or CSV
-    filename = sys.argv[1]
-    if not (filename.endswith('.csv') or filename.endswith('.tsv')):
-        print(f'Expected a TSV or CSV file, got {filename}', file=sys.stderr)
-        sys.exit(EXIT_ERROR)    
+# ---------------------------------------------------------
+# Helper functions
+# ---------------------------------------------------------
 
-    # Read and process the lines
-    lines, layout = read(filename)
-    create_md(lines, layout)
+def normalize_title(text):
+    """
+    Normalize titles so that minor punctuation/case differences
+    do not create duplicate publications.
+    """
+    if not text:
+        return ""
+
+    text = unicodedata.normalize("NFKD", text)
+    text = text.lower()
+
+    # Normalize apostrophes and quotation marks.
+    text = (
+        text.replace("’", "'")
+        .replace("‘", "'")
+        .replace("“", '"')
+        .replace("”", '"')
+        .replace("–", "-")
+        .replace("—", "-")
+    )
+
+    # Remove punctuation for comparison.
+    text = re.sub(r"[^a-z0-9]+", " ", text)
+
+    return " ".join(text.split())
+
+
+def yaml_escape(value):
+    """
+    Escape text for a YAML double-quoted string.
+    """
+    if value is None:
+        return ""
+
+    value = str(value)
+    value = value.replace("\\", "\\\\")
+    value = value.replace('"', '\\"')
+    value = value.replace("\r", " ")
+    value = value.replace("\n", " ")
+
+    return value.strip()
+
+
+def clean_slug(slug):
+    """
+    Convert a slug to a safe filename/permalink component.
+    """
+    slug = slug.strip().lower()
+    slug = re.sub(r"[^a-z0-9-]+", "-", slug)
+    slug = re.sub(r"-+", "-", slug)
+    return slug.strip("-")
+
+
+def extract_front_matter_title(path):
+    """
+    Read the title field from an existing Markdown publication.
+    """
+    try:
+        content = path.read_text(encoding="utf-8")
+    except Exception:
+        return None
+
+    # Only inspect YAML front matter.
+    if not content.startswith("---"):
+        return None
+
+    parts = content.split("---", 2)
+
+    if len(parts) < 3:
+        return None
+
+    front_matter = parts[1]
+
+    match = re.search(
+        r'^\s*title\s*:\s*["\']?(.*?)["\']?\s*$',
+        front_matter,
+        re.MULTILINE,
+    )
+
+    if match:
+        return match.group(1).strip()
+
+    return None
+
+
+def load_existing_publications():
+    """
+    Scan _publications and collect filenames and normalized titles.
+    """
+    existing_files = set()
+    existing_titles = set()
+
+    if not PUBLICATIONS_DIR.exists():
+        PUBLICATIONS_DIR.mkdir(parents=True, exist_ok=True)
+
+    for md_file in PUBLICATIONS_DIR.glob("*.md"):
+        existing_files.add(md_file.name.lower())
+
+        title = extract_front_matter_title(md_file)
+
+        if title:
+            existing_titles.add(normalize_title(title))
+
+    return existing_files, existing_titles
+
+
+def validate_row(row, row_number):
+    """
+    Validate one TSV row.
+    """
+    required = [
+        "pub_date",
+        "title",
+        "venue",
+        "citation",
+        "url_slug",
+        "category",
+    ]
+
+    missing = []
+
+    for field in required:
+        if not row.get(field, "").strip():
+            missing.append(field)
+
+    if missing:
+        raise ValueError(
+            f"Row {row_number}: missing required field(s): "
+            + ", ".join(missing)
+        )
+
+    category = row["category"].strip()
+
+    if category not in VALID_CATEGORIES:
+        raise ValueError(
+            f"Row {row_number}: invalid category '{category}'. "
+            f"Use one of: {', '.join(sorted(VALID_CATEGORIES))}"
+        )
+
+    date = row["pub_date"].strip()
+
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
+        raise ValueError(
+            f"Row {row_number}: pub_date must use YYYY-MM-DD. "
+            f"Found: {date}"
+        )
+
+
+def build_markdown(row):
+    """
+    Build the Markdown content expected by Academic Pages.
+    """
+
+    pub_date = row["pub_date"].strip()
+    title = yaml_escape(row["title"])
+    venue = yaml_escape(row["venue"])
+    excerpt = row.get("excerpt", "").strip()
+    citation = yaml_escape(row["citation"])
+    paper_url = row.get("paper_url", "").strip()
+    category = row["category"].strip()
+    slug = clean_slug(row["url_slug"])
+
+    lines = [
+        "---",
+        f'title: "{title}"',
+        "collection: publications",
+        f"category: {category}",
+        f"permalink: /publication/{pub_date[:4]}-{slug}",
+        f"date: {pub_date}",
+        f'venue: "{venue}"',
+    ]
+
+    if paper_url:
+        lines.append(f'paperurl: "{yaml_escape(paper_url)}"')
+
+    lines.append(f'citation: "{citation}"')
+    lines.append("---")
+    lines.append("")
+
+    if excerpt:
+        lines.append(excerpt.strip())
+        lines.append("")
+
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------
+# Main generator
+# ---------------------------------------------------------
+
+def main():
+
+    print("=" * 70)
+    print("Academic Pages Publication Generator")
+    print("=" * 70)
+
+    if not TSV_FILE.exists():
+        print(f"\nERROR: TSV file not found:")
+        print(TSV_FILE)
+        sys.exit(1)
+
+    PUBLICATIONS_DIR.mkdir(parents=True, exist_ok=True)
+
+    existing_files, existing_titles = load_existing_publications()
+
+    print(f"\nTSV file:")
+    print(f"  {TSV_FILE}")
+
+    print(f"\nPublication directory:")
+    print(f"  {PUBLICATIONS_DIR}")
+
+    print(
+        f"\nExisting Markdown publications detected: "
+        f"{len(existing_files)}"
+    )
+
+    created = []
+    skipped = []
+    errors = []
+
+    with TSV_FILE.open(
+        "r",
+        encoding="utf-8-sig",
+        newline=""
+    ) as infile:
+
+        reader = csv.DictReader(infile, delimiter="\t")
+
+        expected_columns = {
+            "pub_date",
+            "title",
+            "venue",
+            "excerpt",
+            "citation",
+            "url_slug",
+            "paper_url",
+            "category",
+        }
+
+        if reader.fieldnames is None:
+            print("\nERROR: TSV has no header.")
+            sys.exit(1)
+
+        actual_columns = set(reader.fieldnames)
+
+        missing_columns = expected_columns - actual_columns
+
+        if missing_columns:
+            print(
+                "\nERROR: publications.tsv is missing columns:"
+            )
+
+            for column in sorted(missing_columns):
+                print(f"  - {column}")
+
+            sys.exit(1)
+
+        for row_number, row in enumerate(reader, start=2):
+
+            # Ignore completely empty TSV rows.
+            if not any(
+                (value or "").strip()
+                for value in row.values()
+            ):
+                continue
+
+            try:
+                validate_row(row, row_number)
+
+                pub_date = row["pub_date"].strip()
+                year = pub_date[:4]
+
+                title = row["title"].strip()
+                normalized_title = normalize_title(title)
+
+                slug = clean_slug(row["url_slug"])
+
+                filename = f"{year}-{slug}.md"
+                output_path = PUBLICATIONS_DIR / filename
+
+                # -------------------------------------------------
+                # Duplicate check 1:
+                # Existing manually created title
+                # -------------------------------------------------
+
+                if normalized_title in existing_titles:
+
+                    skipped.append(
+                        (
+                            filename,
+                            "publication title already exists"
+                        )
+                    )
+
+                    print(
+                        f"SKIP   {title}\n"
+                        f"       Reason: title already exists"
+                    )
+
+                    continue
+
+                # -------------------------------------------------
+                # Duplicate check 2:
+                # Known manually-created filename
+                # -------------------------------------------------
+
+                alias_filename = EXISTING_FILENAME_ALIASES.get(slug)
+
+                if (
+                    alias_filename
+                    and alias_filename.lower() in existing_files
+                ):
+
+                    skipped.append(
+                        (
+                            filename,
+                            f"existing file {alias_filename}"
+                        )
+                    )
+
+                    print(
+                        f"SKIP   {title}\n"
+                        f"       Reason: {alias_filename} already exists"
+                    )
+
+                    continue
+
+                # -------------------------------------------------
+                # Duplicate check 3:
+                # Generated filename already exists
+                # -------------------------------------------------
+
+                if filename.lower() in existing_files:
+
+                    skipped.append(
+                        (
+                            filename,
+                            "target filename already exists"
+                        )
+                    )
+
+                    print(
+                        f"SKIP   {title}\n"
+                        f"       Reason: {filename} already exists"
+                    )
+
+                    continue
+
+                # -------------------------------------------------
+                # Generate publication
+                # -------------------------------------------------
+
+                markdown = build_markdown(row)
+
+                output_path.write_text(
+                    markdown,
+                    encoding="utf-8"
+                )
+
+                created.append(filename)
+
+                # Immediately register the new publication so that
+                # duplicated TSV rows cannot create another copy.
+                existing_files.add(filename.lower())
+                existing_titles.add(normalized_title)
+
+                print(
+                    f"CREATE {filename}\n"
+                    f"       {title}"
+                )
+
+            except Exception as exc:
+
+                errors.append(
+                    (
+                        row_number,
+                        row.get("title", ""),
+                        str(exc),
+                    )
+                )
+
+                print(
+                    f"ERROR  TSV row {row_number}: "
+                    f"{row.get('title', '')}"
+                )
+
+                print(f"       {exc}")
+
+    # ---------------------------------------------------------
+    # Summary
+    # ---------------------------------------------------------
+
+    print("\n" + "=" * 70)
+    print("Generation complete")
+    print("=" * 70)
+
+    print(f"\nCreated: {len(created)}")
+
+    for filename in created:
+        print(f"  + {filename}")
+
+    print(f"\nSkipped: {len(skipped)}")
+
+    for filename, reason in skipped:
+        print(f"  = {filename} ({reason})")
+
+    print(f"\nErrors: {len(errors)}")
+
+    for row_number, title, error in errors:
+        print(
+            f"  ! Row {row_number}: {title}\n"
+            f"    {error}"
+        )
+
+    if errors:
+        print(
+            "\nSome publications were not generated. "
+            "Fix the listed TSV rows and run the script again."
+        )
+        sys.exit(1)
+
+    print(
+        "\nSuccess. Only missing publications were generated."
+    )
+
+
+if __name__ == "__main__":
+    main()
