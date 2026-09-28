@@ -1,0 +1,47 @@
+---
+title: "Talks & Presentations"
+permalink: /talks/
+author_profile: true
+---
+
+This page highlights selected conference presentations, posters, and research presentations related to my work in artificial intelligence for healthcare, physiological time-series analysis, wearable sensing, and speech-based neurological assessment.
+
+## Selected Presentations
+
+### ACM BCB 2026
+
+**Task-Conditioned PEFT with Prompt-Aligned ASR Error Structure Fusion for Parkinson's Speech Assessment**
+
+Poster presentation, ACM Conference on Bioinformatics, Computational Biology, and Health Informatics (ACM BCB), 2026.
+
+Research on speech-based neurological assessment using self-supervised speech representations, parameter-efficient fine-tuning, automatic speech recognition, and multimodal fusion.
+
+---
+
+### EUSIPCO 2026
+
+**Meal Detection from Continuous Glucose Monitoring Data**
+
+Conference presentation, European Signal Processing Conference (EUSIPCO), 2026.
+
+Research on physiological time-series modeling for automatic meal-event detection using continuous glucose monitoring data.
+
+---
+
+### AIME 2025
+
+**Speech-Based Neurological Assessment**
+
+Conference presentation, Artificial Intelligence in Medicine (AIME), 2025.
+
+Research exploring machine-learning approaches for neurological assessment from speech signals.
+
+---
+
+### pHealth 2024
+
+**GLSTM: On Using LSTM for Glucose Level Prediction**
+
+Conference presentation, pHealth 2024.
+
+Research investigating LSTM-based deep-learning models for glucose-level prediction from continuous glucose monitoring data.
