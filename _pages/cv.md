@@ -28,7 +28,7 @@ Research on wearable sensing and wrist-IMU-based eating-event detection using fr
 **AI & Data Analytics Lab, Prince Sultan University, Saudi Arabia**  
 2020–2023
 
-Research on machine learning and deep learning for healthcare and data analytics.
+Research on machine learning and deep learning for healthcare, including medical image analysis, lung and breast cancer applications, COVID-19-related healthcare analytics, and intelligent data-analysis methods.
 
 ## Education
 
@@ -54,6 +54,7 @@ Research on machine learning and deep learning for healthcare and data analytics
 - Biomedical Signal Processing
 - Speech-Based Neurological Assessment
 - Multimodal Machine Learning
+- Medical Image Analysis
 - Deep Learning and Temporal Modeling
 
 ## Technical Skills
