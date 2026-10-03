@@ -7,26 +7,26 @@ redirect_from:
   - /about.html
 ---
 
-I am currently a **PhD Researcher in Information and Communications Technology** at the **University of Calabria, Italy**, under the supervision of **Prof. Sergio Flesca** and **Prof. Pierangelo Veltri**. My PhD research focuses on artificial intelligence for healthcare, particularly physiological time-series analysis, continuous glucose monitoring, meal and eating-event detection, wearable sensing, and speech-based neurological assessment.
+I am currently a PhD Researcher in Information and Communications Technology at the University of Calabria, Italy, under the supervision of Prof. Sergio Flesca and Prof. Pierangelo Veltri. My PhD research focuses on artificial intelligence for healthcare, particularly physiological time-series analysis, continuous glucose monitoring, meal and eating-event detection, wearable sensing, and speech-based neurological assessment.
 
-From October 2024 to April 2025, I was an **International Scholar at the e-Media Research Lab, ESAT-STADIUS, KU Leuven, Belgium**, working with **Prof. Bart Vanrumste** and **Dr. Chunzhuo Wang** on wrist-worn IMU-based eating-event detection and multimodal wearable sensing.
+From October 2024 to April 2025, I was an International Scholar at the e-Media Research Lab, ESAT-STADIUS, KU Leuven, Belgium, working with Prof. Bart Vanrumste and Dr. Chunzhuo Wang on wrist-worn IMU-based eating-event detection and multimodal wearable sensing.
 
-Previously, I worked as a **Research Assistant at the Artificial Intelligence & Data Analytics Lab, Prince Sultan University, Saudi Arabia**, where my research included artificial intelligence for healthcare, medical image analysis, facial-expression recognition, lung and breast cancer analysis, COVID-19-related healthcare analytics, and AI/IoT applications.
+Previously, I worked as a Research Assistant at the Artificial Intelligence & Data Analytics Lab, Prince Sultan University, Saudi Arabia, where my research included artificial intelligence for healthcare, medical image analysis, facial-expression recognition, lung and breast cancer analysis, COVID-19-related healthcare analytics, and AI/IoT applications.
 
-I received my **MS in Computer Science** from the **International Islamic University Islamabad, Pakistan**, and my **BS in Computer Science** from the **University of Peshawar, Pakistan**.
+I received my MS in Computer Science from the International Islamic University Islamabad, Pakistan, and my BS in Computer Science from the University of Peshawar, Pakistan.
 
-My research interests include **AI for healthcare, digital health, physiological time-series modeling, continuous glucose monitoring, diabetes technology, wearable sensing, multimodal learning, biomedical signal processing, speech-based neurological assessment, and medical image analysis**.
+My research interests include AI for healthcare, digital health, physiological time-series modeling, continuous glucose monitoring, diabetes technology, wearable sensing, multimodal learning, biomedical signal processing, speech-based neurological assessment, and medical image analysis.
 
 
 # 🔥News
 
-- **2026.09:** Presented our paper, **“Meal Episode Detection from Continuous Glucose Monitoring Using a BiLSTM Sliding-Window and Constraint-Based Decoding,”** at the 34th European Signal Processing Conference (**EUSIPCO 2026**) in Bruges, Belgium.
+- **2026.09:** Presented our paper, *“Meal Episode Detection from Continuous Glucose Monitoring Using a BiLSTM Sliding-Window and Constraint-Based Decoding,”* at the 34th European Signal Processing Conference (EUSIPCO 2026) in Bruges, Belgium.
 
-- **2026.07:** Our review paper, **“AI-Based Detection and Prediction of Eating Events Using Continuous Glucose Monitoring: A Comprehensive Review,”** was accepted for publication in *Biomedical Signal Processing and Control*.
+- **2026.07:** Our review paper, *“AI-Based Detection and Prediction of Eating Events Using Continuous Glucose Monitoring: A Comprehensive Review,”* was accepted for publication in *Biomedical Signal Processing and Control*.
 
-- **2026.07:** Our work, **“Task-Conditioned PEFT with Prompt-Aligned ASR Error Structure Fusion for Parkinson's Speech Assessment,”** was presented at the ACM Conference on Bioinformatics, Computational Biology, and Health Informatics (**ACM BCB 2026**) in Rende, Italy.
+- **2026.07:** Our work, *“Task-Conditioned PEFT with Prompt-Aligned ASR Error Structure Fusion for Parkinson's Speech Assessment,”* was presented at the ACM Conference on Bioinformatics, Computational Biology, and Health Informatics (**ACM BCB 2026**) in Rende, Italy.
 
-- **2025.06:** Presented our work, **“Using LSTM-Based Model on Vocal Signal Analysis for the Classification of Multiple Sclerosis,”** at the 23rd International Conference on Artificial Intelligence in Medicine (**AIME 2025**) in Pavia, Italy.
+- **2025.06:** Presented our work, *“Using LSTM-Based Model on Vocal Signal Analysis for the Classification of Multiple Sclerosis,”* at the 23rd International Conference on Artificial Intelligence in Medicine (**AIME 2025**) in Pavia, Italy.
 
 - **2025.04:** Completed a six-month international research stay at the **e-Media Research Lab, KU Leuven, Belgium**, focusing on wearable sensing and wrist-IMU-based eating-event detection.
 
