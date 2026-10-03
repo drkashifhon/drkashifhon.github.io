@@ -37,25 +37,23 @@
     "layout/sidebar",
     "layout/json_cv"
 ;
+
+
 /* =========================================================
-   Muhammad Kashif - Academic Homepage Custom Styling
-   Mobile-first + older Academic Pages desktop style
+   Muhammad Kashif - Academic Homepage Styling
+   Keep native Academic Pages responsive layout
    ========================================================= */
 
 
 /* ---------------------------------------------------------
-   BASE / MOBILE / TABLET
+   Overall desktop container
    --------------------------------------------------------- */
 
-/* Overall width on smaller screens */
 #main,
 .masthead__inner-wrap {
-  width: auto !important;
-  max-width: none !important;
+  max-width: 1400px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
 }
 
 
@@ -63,12 +61,12 @@
    Header
    --------------------------------------------------------- */
 
-/* Hide large site-name item in top navigation */
+/* Hide site-name item in navigation */
 .masthead__menu-item--lg {
   display: none !important;
 }
 
-/* Hide theme-switching gear */
+/* Hide theme gear */
 #theme-toggle,
 .theme-toggle,
 .greedy-nav button.theme-toggle {
@@ -87,46 +85,23 @@
 
 
 /* ---------------------------------------------------------
-   Sidebar - mobile/tablet
+   Sidebar text
    --------------------------------------------------------- */
 
-.sidebar {
-  width: 100% !important;
-  float: none !important;
-  font-size: 1em !important;
-  margin-bottom: 1.25rem !important;
-}
-
-/* Compact mobile avatar */
-.author__avatar img {
-  width: 48px !important;
-  height: 48px !important;
-  max-width: 48px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  object-fit: cover !important;
-}
-
-/* Sidebar name */
 .sidebar .author__name {
-  font-size: 1rem !important;
+  font-size: 1.08em !important;
   font-weight: 600 !important;
-  line-height: 1.2 !important;
-  margin-top: 0 !important;
-  margin-bottom: 4px !important;
+  line-height: 1.25 !important;
 }
 
-/* Sidebar biography */
 .author__bio {
   font-size: 0.88em !important;
-  line-height: 1.4 !important;
+  line-height: 1.45 !important;
   font-weight: 400 !important;
   color: #494e52 !important;
-  margin-top: 2px !important;
-  margin-bottom: 6px !important;
 }
 
-/* Sidebar social/profile links */
+/* Social/profile links */
 .author__urls {
   color: #494e52 !important;
 }
@@ -152,30 +127,20 @@
 
 
 /* ---------------------------------------------------------
-   Main content - mobile/tablet
+   Main content typography
    --------------------------------------------------------- */
 
-.page {
-  width: 100% !important;
-  float: none !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
 .page__content {
-  width: 100% !important;
-  font-size: 1rem !important;
+  font-size: 0.98em !important;
   line-height: 1.5 !important;
   color: #494e52 !important;
 }
 
-/* Paragraph spacing */
 .page__content p {
   margin-top: 0 !important;
   margin-bottom: 1.15em !important;
 }
 
-/* List spacing */
 .page__content ul {
   margin-top: 0.4em !important;
   margin-bottom: 1.2em !important;
@@ -186,18 +151,16 @@
   line-height: 1.5 !important;
 }
 
-/* Main page title */
 .page__title {
-  font-size: 1.45rem !important;
+  font-size: 1.55em !important;
   line-height: 1.2 !important;
   font-weight: 700 !important;
   color: #494e52 !important;
   margin-bottom: 0.55em !important;
 }
 
-/* Section headings */
 .page__content h1 {
-  font-size: 1.4rem !important;
+  font-size: 1.55em !important;
   line-height: 1.25 !important;
   font-weight: 700 !important;
   color: #494e52 !important;
@@ -206,28 +169,53 @@
 }
 
 .page__content h2 {
-  font-size: 1.2rem !important;
+  font-size: 1.25em !important;
   font-weight: 700 !important;
   color: #494e52 !important;
 }
 
-/* Links */
+.page__content h3 {
+  font-size: 1.05em !important;
+  font-weight: 700 !important;
+  color: #494e52 !important;
+}
+
 .page__content a {
   color: #52adc8 !important;
 }
 
-/* Prevent mobile overflow */
+
+/* ---------------------------------------------------------
+   Desktop-only avatar
+   --------------------------------------------------------- */
+
+@include breakpoint($large) {
+
+  .author__avatar img {
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px !important;
+    object-fit: cover !important;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   Mobile safeguards
+   Do NOT override sidebar/page widths.
+   Academic Pages handles those responsively.
+   --------------------------------------------------------- */
+
+.author__avatar img {
+  object-fit: cover;
+}
+
 .page__content,
 .page__content p,
 .page__content li,
 .author__urls {
   overflow-wrap: anywhere;
-  word-break: normal;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 
@@ -237,89 +225,4 @@ img {
 
 .page__footer {
   display: none !important;
-}
-
-
-/* =========================================================
-   DESKTOP
-   Academic Pages large breakpoint
-   ========================================================= */
-
-@include breakpoint($large) {
-
-  /* Wide centered desktop layout */
-  #main,
-  .masthead__inner-wrap {
-    max-width: 1400px !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  /* Restore normal desktop sidebar */
-  .sidebar {
-    width: auto !important;
-    float: left !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* Desktop profile image */
-  .author__avatar img {
-    width: 150px !important;
-    height: 150px !important;
-    max-width: 150px !important;
-    padding: 5px !important;
-    border: 1px solid var(--global-border-color) !important;
-    object-fit: cover !important;
-  }
-
-  /* Desktop sidebar name */
-  .sidebar .author__name {
-    font-size: 1.08em !important;
-    font-weight: 600 !important;
-    line-height: 1.25 !important;
-    margin-top: 0.8em !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* Desktop sidebar biography */
-  .author__bio {
-    font-size: 0.88em !important;
-    line-height: 1.45 !important;
-    margin-top: 8px !important;
-    margin-bottom: 16px !important;
-  }
-
-  /* Desktop sidebar links */
-  .author__urls li {
-    font-size: 0.82rem !important;
-    line-height: 1.5 !important;
-  }
-
-  /* Main desktop content */
-  .page {
-    width: auto !important;
-    float: right !important;
-    padding-right: 0 !important;
-  }
-
-  .page__content {
-    width: auto !important;
-    font-size: 0.98em !important;
-    line-height: 1.5 !important;
-  }
-
-  /* Desktop page title */
-  .page__title {
-    font-size: 1.55em !important;
-  }
-
-  /* Desktop section headings */
-  .page__content h1 {
-    font-size: 1.55em !important;
-  }
-
-  .page__content h2 {
-    font-size: 1.25em !important;
-  }
 }
