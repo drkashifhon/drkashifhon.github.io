@@ -1,60 +1,64 @@
 ---
 permalink: /
-title: "About Me"
+title: "Muhammad Kashif"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-I am a **PhD Researcher in Information and Communications Technology** at the **University of Calabria, Italy**, working at the intersection of **artificial intelligence, physiological time-series analysis, wearable sensing, and digital health**.
+I am currently a **PhD Researcher in Information and Communications Technology** at the **University of Calabria, Italy**, under the supervision of **Prof. Sergio Flesca** and **Prof. Pierangelo Veltri**. My PhD research focuses on artificial intelligence for healthcare, particularly physiological time-series analysis, continuous glucose monitoring, meal and eating-event detection, wearable sensing, and speech-based neurological assessment.
 
-My research focuses on developing machine-learning methods for extracting clinically meaningful information from physiological and behavioral data. In particular, I work on **continuous glucose monitoring (CGM)**, **meal and eating-event detection**, **glucose forecasting**, **wearable sensor analytics**, and **speech-based neurological assessment**.
+From October 2024 to April 2025, I was an **International Scholar at the e-Media Research Lab, ESAT-STADIUS, KU Leuven, Belgium**, working with **Prof. Bart Vanrumste** and **Dr. Chunzhuo Wang** on wrist-worn IMU-based eating-event detection and multimodal wearable sensing.
 
-My earlier research experience also includes AI-based medical image analysis for applications such as lung cancer detection, breast cancer diagnosis, and COVID-19-related healthcare analytics.
+Previously, I worked as a **Research Assistant at the Artificial Intelligence & Data Analytics Lab, Prince Sultan University, Saudi Arabia**, where my research included artificial intelligence for healthcare, medical image analysis, facial-expression recognition, lung and breast cancer analysis, COVID-19-related healthcare analytics, and AI/IoT applications.
 
-My broader research goal is to develop robust and clinically relevant AI methods that can support **personalized health monitoring, disease assessment, and data-driven decision support**.
+I received my **MS in Computer Science** from the **International Islamic University Islamabad, Pakistan**, and my **BS in Computer Science** from the **University of Peshawar, Pakistan**.
 
-## Research Interests
+My research interests include **AI for healthcare, digital health, physiological time-series modeling, continuous glucose monitoring, diabetes technology, wearable sensing, multimodal learning, biomedical signal processing, speech-based neurological assessment, and medical image analysis**.
 
-- Artificial Intelligence for Healthcare
-- Physiological Time-Series Analysis
-- Continuous Glucose Monitoring and Diabetes Technology
-- Meal and Eating-Event Detection
-- Wearable and Multimodal Sensing
-- Biomedical Signal Processing
-- Speech-Based Neurological Assessment
-- Medical Image Analysis
-- Deep Learning and Temporal Modeling
 
-## Current Research
+# 🔥News
 
-My current work investigates AI methods for analyzing multimodal physiological data, with particular emphasis on:
+- **2026.09:** Presented our paper, **“Meal Episode Detection from Continuous Glucose Monitoring Using a BiLSTM Sliding-Window and Constraint-Based Decoding,”** at the 34th European Signal Processing Conference (**EUSIPCO 2026**) in Bruges, Belgium.
 
-- **Meal episode detection from CGM and insulin data**
-- **Eating-event detection using wrist-worn inertial sensors**
-- **Glucose-level prediction from continuous glucose monitoring**
-- **Speech-based assessment of neurological disorders**
-- **Multimodal learning for digital health applications**
+- **2026.07:** Our review paper, **“AI-Based Detection and Prediction of Eating Events Using Continuous Glucose Monitoring: A Comprehensive Review,”** was accepted for publication in *Biomedical Signal Processing and Control*.
 
-## Research Approach
+- **2026.07:** Our work, **“Task-Conditioned PEFT with Prompt-Aligned ASR Error Structure Fusion for Parkinson's Speech Assessment,”** was presented at the ACM Conference on Bioinformatics, Computational Biology, and Health Informatics (**ACM BCB 2026**) in Rende, Italy.
 
-My work combines machine learning, deep learning, signal processing, and physiological sensing. I am particularly interested in subject-independent evaluation, robust validation, temporal modeling, and the translation of AI methods into practical healthcare applications.
+- **2025.06:** Presented our work, **“Using LSTM-Based Model on Vocal Signal Analysis for the Classification of Multiple Sclerosis,”** at the 23rd International Conference on Artificial Intelligence in Medicine (**AIME 2025**) in Pavia, Italy.
 
-## Selected Research Areas
+- **2025.04:** Completed a six-month international research stay at the **e-Media Research Lab, KU Leuven, Belgium**, focusing on wearable sensing and wrist-IMU-based eating-event detection.
 
-### Diabetes & CGM Analytics
+- **2024.10:** Joined the **e-Media Research Lab, KU Leuven**, as an International Scholar for doctoral research mobility.
 
-Development of machine-learning methods for continuous glucose monitoring, meal detection, glucose prediction, and physiological event modeling.
+- **2024.05:** Our paper, **“GLSTM: On Using LSTM for Glucose Level Prediction,”** was published in *Studies in Health Technology and Informatics* and presented at **pHealth 2024** in Rende, Italy.
 
-### Wearable Sensing
 
-Analysis of wrist-worn inertial and physiological sensors for automatic recognition of eating behavior and activities of daily living.
+# 💼Experience
 
-### Speech & Neurological AI
+- **2023 - Current:** PhD Researcher, Department of Information Engineering, University of Calabria, Italy
 
-Machine-learning approaches for neurological assessment from speech using self-supervised speech representations, automatic speech recognition, and multimodal fusion.
+- **2024.10 - 2025.04:** International Scholar, e-Media Research Lab, ESAT-STADIUS, KU Leuven, Belgium
 
-### Multimodal Health AI
+- **2020.06 - 2023.05:** Research Assistant, Artificial Intelligence & Data Analytics Lab, Prince Sultan University, Saudi Arabia
 
-Integration of heterogeneous physiological, behavioral, and contextual information for robust and personalized health monitoring.
+
+# 🎖️Awards & Grants
+
+- **PNRR FAIR Doctoral Research Funding:** PhD research supported within the **Future Artificial Intelligence Research (FAIR)** programme under NextGenerationEU.
+
+- **International Research Mobility:** Six-month doctoral research mobility at **KU Leuven, Belgium**, conducting research on wearable sensing and eating-event detection.
+
+- **Prime Minister's Laptop Scheme - HEC Pakistan:** Merit-based laptop award for academic achievement, 2018.
+
+- **Naway Sahar Laptop Scheme:** Merit-based laptop award for academic achievement, 2013.
+
+
+# 🎓Education
+
+- **2023 - Current:** PhD in Information and Communications Technology, University of Calabria, Italy
+
+- **2016 - 2019:** MS in Computer Science, International Islamic University Islamabad, Pakistan
+
+- **2009 - 2013:** BS in Computer Science, University of Peshawar, Pakistan
