@@ -197,3 +197,126 @@
 .page__footer {
   display: none !important;
 }
+
+/* =========================================================
+   Sidebar link sizing
+   ========================================================= */
+
+.author__urls li {
+  font-size: 0.82rem !important;
+  line-height: 1.5 !important;
+}
+
+.author__urls a {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  margin-bottom: 3px !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+.author__urls i,
+.author__urls svg {
+  font-size: 0.95em !important;
+}
+
+/* =========================================================
+   Responsive/mobile fixes
+   ========================================================= */
+
+/* Desktop-only profile image sizing */
+{
+
+  .author__avatar img {
+    width: 150px !important;
+    height: 150px !important;
+    max-width: 150px !important;
+    object-fit: cover;
+  }
+
+}
+
+
+/* Mobile + tablet */
+@media (max-width: 1023px) {
+
+  /* Let the template use the full mobile viewport */
+  #main,
+  .masthead__inner-wrap {
+    width: auto !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Sidebar becomes a horizontal/compact profile block */
+  .sidebar {
+    width: 100% !important;
+    float: none !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* Compact avatar on mobile */
+  .author__avatar img {
+    width: 48px !important;
+    height: 48px !important;
+    max-width: 48px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    object-fit: cover !important;
+  }
+
+  /* Name beside avatar */
+  .sidebar .author__name {
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Short bio */
+  .author__bio {
+    font-size: 0.84rem !important;
+    line-height: 1.35 !important;
+    margin-top: 2px !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Main content occupies entire screen */
+  .page {
+    width: 100% !important;
+    float: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .page__content {
+    width: 100% !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .page__title {
+    font-size: 1.45rem !important;
+  }
+
+  .page__content h1 {
+    font-size: 1.4rem !important;
+  }
+
+  /* Prevent long text/links from overflowing phone screen */
+  .page__content,
+  .page__content p,
+  .page__content li,
+  .author__urls {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
