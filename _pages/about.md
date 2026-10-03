@@ -66,7 +66,7 @@ My research interests include AI for healthcare, digital health, physiological t
 
 # 📚Academic Services
 
-## Teaching
+### Teaching
 
 - **03/2022 - 09/2023:** **Subject Specialist, Computer Science**, Government Higher Secondary School Turlandi, Swabi, Pakistan.  
   Taught computer science and supported students in programming, computing fundamentals, and practical coursework.
@@ -78,7 +78,7 @@ My research interests include AI for healthcare, digital health, physiological t
   Taught computer science courses at undergraduate and graduate levels and contributed to laboratory teaching, assignments, examinations, and student academic support.
 
 
-## Student Supervision
+### Student Supervision
 
 - **University of Calabria, Italy:** Research supervision and mentoring of *one MS student* in the area of artificial intelligence and data-driven healthcare research.
 
