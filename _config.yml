@@ -29,8 +29,8 @@ author:
   bio              : "PhD Researcher in AI for Healthcare"
   location         : "Italy"
   employer         : "University of Calabria"
-  uri              : "https://dottorato.dimes.unical.it/index.php/students/kashif-muhammad"
-  email            : "kashif.muhammad@dimes.unical.it"
+  #uri              : "https://dottorato.dimes.unical.it/index.php/students/kashif-muhammad"
+ # email            : "kashif.muhammad@dimes.unical.it"
 
   # Academic websites
   academia         :
@@ -50,7 +50,7 @@ author:
   bitbucket        :
   codepen          :
   dribbble         :
-  github           : "drkashifhon"
+  #github           : "drkashifhon"
   kaggle           :
   stackoverflow    :
 
