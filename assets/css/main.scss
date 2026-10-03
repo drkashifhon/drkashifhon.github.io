@@ -37,3 +37,57 @@
     "layout/sidebar",
     "layout/json_cv"
 ;
+
+/* =========================================================
+   Muhammad Kashif - custom academic homepage styling
+   ========================================================= */
+
+/* Hide footer */
+.page__footer {
+  display: none !important;
+}
+
+/* Smaller profile image */
+.author__avatar img {
+  max-width: 150px !important;
+}
+
+/* Sidebar name */
+.sidebar .author__name {
+  font-size: 1em !important;
+  font-weight: 600;
+}
+
+/* Shorter, cleaner biography */
+.author__bio {
+  font-size: 0.85em !important;
+  line-height: 1.4;
+  margin-top: 8px !important;
+  margin-bottom: 18px !important;
+}
+
+/* Compact sidebar links */
+.author__urls a {
+  font-size: 0.85em !important;
+  margin-bottom: 3px !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+/* Slightly more compact homepage typography */
+.page__content {
+  font-size: 0.95em;
+  line-height: 1.55;
+}
+
+.page__content h1 {
+  font-size: 1.55em;
+  margin-top: 1.25em;
+  margin-bottom: 0.55em;
+}
+
+.page__content h2 {
+  font-size: 1.25em;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
