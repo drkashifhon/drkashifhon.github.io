@@ -62,3 +62,24 @@ My research interests include **AI for healthcare, digital health, physiological
 - **2016 - 2019:** MS in Computer Science, International Islamic University Islamabad, Pakistan
 
 - **2009 - 2013:** BS in Computer Science, University of Peshawar, Pakistan
+
+
+# 📚Academic Services
+
+## Teaching
+
+- **03/2022 - 09/2023:** **Subject Specialist, Computer Science**, Government Higher Secondary School Turlandi, Swabi, Pakistan.  
+  Taught computer science and supported students in programming, computing fundamentals, and practical coursework.
+
+- **Fall 2021 - Spring 2022:** **Lecturer, Computer Science**, Government Post Graduate College (GPGC), Swabi, Pakistan.  
+  Taught undergraduate courses including **Data Mining** and **Natural Language Processing**, and conducted laboratory sessions, quizzes, assignments, examinations, and student assessment.
+
+- **Fall 2019 - Spring 2020:** **Visiting Faculty Lecturer**, International Islamic University Islamabad (IIUI), Pakistan.  
+  Taught computer science courses at undergraduate and graduate levels and contributed to laboratory teaching, assignments, examinations, and student academic support.
+
+
+## Student Supervision
+
+- **University of Calabria, Italy:** Research supervision and mentoring of **one MS student** in the area of artificial intelligence and data-driven healthcare research.
+
+- **Government Post Graduate College, Swabi, Pakistan:** Supervised **four BS student project groups** in Computer Science, supporting project planning, implementation, experimentation, and final project preparation.
