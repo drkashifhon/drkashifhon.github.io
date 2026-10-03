@@ -91,3 +91,51 @@
   margin-top: 1.2em;
   margin-bottom: 0.5em;
 }
+
+/* =========================================================
+   Match compact one-page academic style
+   ========================================================= */
+
+/* Hide site title in top navigation */
+.site-title {
+  display: none !important;
+}
+
+/* Hide theme toggle / gear */
+#theme-toggle,
+.theme-toggle {
+  display: none !important;
+}
+
+/* Make masthead content align farther left */
+.masthead__inner-wrap {
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Slightly wider main content */
+.page {
+  @include breakpoint($large) {
+    @include span(10 of 12 last);
+    float: right;
+  }
+}
+
+/* More compact body text */
+.page__content {
+  font-size: 0.92em;
+  line-height: 1.5;
+}
+
+/* Compact section headings */
+.page__content h1 {
+  font-size: 1.45em;
+  margin-top: 1.1em;
+  margin-bottom: 0.45em;
+}
+
+/* Keep homepage title compact */
+.page__title {
+  font-size: 1.5em;
+}
