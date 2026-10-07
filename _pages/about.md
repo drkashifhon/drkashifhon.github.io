@@ -28,7 +28,7 @@ In October 2026, I also joined a PNRR-funded research activity at DIMES as a Pos
 
 - **2026.07:** Our review paper, *“AI-Based Detection and Prediction of Eating Events Using Continuous Glucose Monitoring: A Comprehensive Review,”* was accepted for publication in *Biomedical Signal Processing and Control*.
 
-- - **2026.07:** Our work, *“Task-Conditioned PEFT with Prompt-Aligned ASR Error Structure Fusion for Parkinson's Speech Assessment,”* received Best Poster Award.
+- **2026.07:** Our work, *“Task-Conditioned PEFT with Prompt-Aligned ASR Error Structure Fusion for Parkinson's Speech Assessment,”* received Best Poster Award.
 
 - **2026.07:** Our work, *“Task-Conditioned PEFT with Prompt-Aligned ASR Error Structure Fusion for Parkinson's Speech Assessment,”* was presented at the ACM Conference on Bioinformatics, Computational Biology, and Health Informatics (*ACM BCB 2026*) in Rende, Italy.
 
