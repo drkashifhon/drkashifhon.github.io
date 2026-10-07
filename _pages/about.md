@@ -17,8 +17,12 @@ I received my MS in Computer Science from the International Islamic University I
 
 My research interests include AI for healthcare, digital health, physiological time-series modeling, continuous glucose monitoring, diabetes technology, wearable sensing, multimodal learning, biomedical signal processing, speech-based neurological assessment, and medical image analysis.
 
+In October 2026, I also joined a PNRR-funded research activity at DIMES as a Post-Lauream Research Scholar, working on AI-based methods for automatic identification of tumor lesions from biomedical images within the *Advancing Lung Cancer Screening* project.
+
 
 # 🔥News
+
+- **2026.10:** Awarded a five-month post-lauream research scholarship at the University of Calabria (DIMES) for research on AI-based automatic identification of tumor lesions from biomedical images within the PNRR project *Advancing Lung Cancer Screening: Artificial Intelligence, Multimodal Imaging and Cutting-Edge Technologies for Early Detection and Characterization*.
 
 - **2026.09:** Presented our paper, *“Meal Episode Detection from Continuous Glucose Monitoring Using a BiLSTM Sliding-Window and Constraint-Based Decoding,”* at the 34th European Signal Processing Conference (EUSIPCO 2026) in Bruges, Belgium.
 
@@ -36,10 +40,15 @@ My research interests include AI for healthcare, digital health, physiological t
 
 - **2024.05:** Our paper, *“GLSTM: On Using LSTM for Glucose Level Prediction,”* was published in *Studies in Health Technology and Informatics* and presented at *pHealth 2024* in Rende, Italy.
 
+- **2023:** Awarded doctoral research funding under the *Future Artificial Intelligence Research (FAIR)* programme, supported by PNRR / NextGenerationEU, for my PhD research at the University of Calabria.
+
 
 # 💼Experience
 
-- **2023 - Present:** PhD Researcher, Department of Information Engineering, University of Calabria, Italy
+- **2026.10 - Present:** Post-Lauream Research Scholar, Department of Information Engineering (DIMES), University of Calabria, Italy  
+  Research on AI-based models for the automatic identification of tumor lesions from biomedical images within the PNRR project *Advancing Lung Cancer Screening: Artificial Intelligence, Multimodal Imaging and Cutting-Edge Technologies for Early Detection and Characterization*.
+
+- **2023.06 - 2026.05:** PhD Researcher, Department of Information Engineering, University of Calabria, Italy
 
 - **2024.10 - 2025.04:** International Scholar, e-Media Research Lab, ESAT-STADIUS, KU Leuven, Belgium
 
@@ -47,6 +56,8 @@ My research interests include AI for healthcare, digital health, physiological t
 
 
 # 🏅Funding & Awards
+
+- **Post-Lauream Research Scholarship - University of Calabria, 2026:** Awarded a five-month research scholarship at DIMES for the development and evaluation of AI models for automatic tumor-lesion identification from biomedical images, within the PNRR project *Advancing Lung Cancer Screening: Artificial Intelligence, Multimodal Imaging and Cutting-Edge Technologies for Early Detection and Characterization*.
 
 - **PNRR FAIR Doctoral Research Funding:** Doctoral research supported under the *Future Artificial Intelligence Research (FAIR)* programme, funded by NextGenerationEU.
 
