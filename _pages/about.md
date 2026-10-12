@@ -79,12 +79,12 @@ In October 2026, I also joined a PNRR-funded research activity at DIMES as a Pos
 
 # 🎯 Selected Advanced Training
 
-- **2026:** International Summer School on Wearable Sensors, Università Campus Bio-Medico di Roma, Rome, Italy
+- **2026:** **International Summer School on Wearable Sensors**, Università Campus Bio-Medico di Roma, Rome, Italy
 
-- **2026:** ELLIS Winter School on Foundation Models, University of Amsterdam, Amsterdam, The Netherlands
+- **2026:** **ELLIS Winter School on Foundation Models**, University of Amsterdam, Amsterdam, The Netherlands
 
-- **2023 - 2025:** Data Science Summer Schools, Hertie School, Berlin, Germany  
-  Advanced training in data science, statistical learning, machine learning, and applied computational methods.
+- **2023 - 2025:** **Data Science Summer Schools**, Hertie School, Berlin, Germany  
+  Training in data science, statistical learning, machine learning, and applied computational methods.
 
 
 # 📚Academic Services
