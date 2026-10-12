@@ -77,7 +77,7 @@ In October 2026, I also joined a PNRR-funded research activity at DIMES as a Pos
 - **2009 - 2013:** BS in Computer Science, University of Peshawar, Pakistan
   
 
-  # 🎯 Selected Advanced Training
+# 🎯 Selected Advanced Training
 
 - **2026:** International Summer School on Wearable Sensors, Università Campus Bio-Medico di Roma, Rome, Italy
 
