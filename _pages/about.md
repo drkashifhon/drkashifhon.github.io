@@ -22,7 +22,7 @@ In October 2026, I also joined a PNRR-funded research activity at DIMES as a Pos
 
 # 🔥News
 
-- **2026.10:** Awarded a five-month post-lauream research scholarship at the University of Calabria (DIMES) for research on AI-based automatic identification of tumor lesions from biomedical images within the PNRR project *Advancing Lung Cancer Screening: Artificial Intelligence, Multimodal Imaging and Cutting-Edge Technologies for Early Detection and Characterization*.
+- **2026.10:** Awarded a post-lauream research scholarship at the University of Calabria (DIMES) for research on AI-based automatic identification of tumor lesions from biomedical images within the PNRR project *Advancing Lung Cancer Screening: Artificial Intelligence, Multimodal Imaging and Cutting-Edge Technologies for Early Detection and Characterization*.
 
 - **2026.09:** Presented our paper, *“Meal Episode Detection from Continuous Glucose Monitoring Using a BiLSTM Sliding-Window and Constraint-Based Decoding,”* at the 34th European Signal Processing Conference (EUSIPCO 2026) in Bruges, Belgium.
 
@@ -57,7 +57,7 @@ In October 2026, I also joined a PNRR-funded research activity at DIMES as a Pos
 
 # 🏅Funding & Awards
 
-- **Post-Lauream Research Scholarship - University of Calabria, 2026:** Awarded a five-month research scholarship at DIMES for the development and evaluation of AI models for automatic tumor-lesion identification from biomedical images, within the PNRR project *Advancing Lung Cancer Screening: Artificial Intelligence, Multimodal Imaging and Cutting-Edge Technologies for Early Detection and Characterization*.
+- **Post-Lauream Research Scholarship - University of Calabria, 2026:** Awarded a research scholarship at DIMES for the development and evaluation of AI models for automatic tumor-lesion identification from biomedical images, within the PNRR project *Advancing Lung Cancer Screening: Artificial Intelligence, Multimodal Imaging and Cutting-Edge Technologies for Early Detection and Characterization*.
 
 - **PNRR FAIR Doctoral Research Funding:** Doctoral research supported under the *Future Artificial Intelligence Research (FAIR)* programme, funded by NextGenerationEU.
 
