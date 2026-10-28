@@ -102,9 +102,3 @@ In October 2026, I also joined a PNRR-funded research activity at DIMES as a Pos
 - **University of Calabria, Italy:** Research mentoring and co-supervision of one MS student in artificial intelligence and data-driven healthcare research.
 
 - **Government Post Graduate College, Swabi, Pakistan:** Supervised four BS final-year project groups in Computer Science, supporting project planning, implementation, experimentation, and final project preparation.
-
-  # 📄 Documents
-
-- [**Curriculum Vitae (PDF)**](/files/Kashif_CV.pdf)
-
-- [**PhD Thesis:** *AI Methods for Physiological Time-Series Analysis in Healthcare: CGM Analytics and Speech-Based Neurological Assessment*](/files/Kashif_Muhammad_PhD_Thesis.pdf)
